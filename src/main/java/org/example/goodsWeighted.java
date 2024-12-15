@@ -3,6 +3,7 @@ package org.example;
 import java.util.Objects;
 
 public class goodsWeighted extends goods
+    //Весовой товар хранит название и описание.
 {
     double weight;
     public goodsWeighted(String user_name_goods, String user_option_goods, double user_weight)
@@ -29,8 +30,7 @@ public class goodsWeighted extends goods
 
     @Override
     public String toString() {
-        return "================Весовой Товар==============\n"+
-                "Товар: '" + name_goods + '\'' + '\n' +
+        return "Товар: '" + name_goods + '\'' + '\n' +
                 "Описание товара: '" + options_goods + '\'' + '\n'+
                 "Вес товара: '" + weight + '\'';
     }

@@ -7,7 +7,7 @@ public class goodPiece extends goods
 // Должен быть конструктор по всем трем полям.
 {
     double weight_piece ;
-    public goodPiece(String user_name_goods, String user_options_goods, int user_weight_piece) {
+    public goodPiece(String user_name_goods, String user_options_goods, double user_weight_piece) {
         super(user_name_goods, user_options_goods);
         this.weight_piece = user_weight_piece;
     }
@@ -29,8 +29,7 @@ public class goodPiece extends goods
 
     @Override
     public String toString() {
-        return "================Весовой Товар==============\n"+
-                "Товар: '" + name_goods + '\'' + '\n' +
+        return "Товар: '" + name_goods + '\'' + '\n' +
                 "Описание товара: '" + options_goods + '\'' + '\n'+
                 "Вес товара: '" + weight_piece + '\'';
     }

@@ -22,8 +22,11 @@ public class goods
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof goods goods)) return false;
-        return Objects.equals(getName_goods(), goods.getName_goods()) && Objects.equals(getOptions_goods(), goods.getOptions_goods());
+        if (this == o) return true; // Сравнение ссылок
+        if (o == null || getClass() != o.getClass()) return false; // Проверка типов
+        goods goods_test = (goods) o;
+        return Objects.equals(name_goods, goods_test.name_goods) &&
+                Objects.equals(options_goods, goods_test.options_goods);
     }
     @Override
     public int hashCode() {
@@ -31,8 +34,7 @@ public class goods
     }
     @Override
     public String toString() {
-        return "================Товар======================\n"+
-                "Товар: '" + name_goods + '\'' +'\n' +
+        return "Товар: '" + name_goods + '\'' +'\n' +
                 "Описание товара: '" + options_goods + '\'';
     }
 }

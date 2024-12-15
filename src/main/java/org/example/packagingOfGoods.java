@@ -22,18 +22,18 @@ public class packagingOfGoods
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof packagingOfGoods that)) return false;
-        return getMass_pack() == that.getMass_pack() && Objects.equals(getName_pack(), that.getName_pack());
+        if (this == o) return true; // Проверка на идентичность ссылок
+        if (o == null || getClass() != o.getClass()) return false; // Тип проверки
+        packagingOfGoods that = (packagingOfGoods) o; // Приведение типов
+        return mass_pack == that.mass_pack && Objects.equals(name_pack, that.name_pack);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(getName_pack(), getMass_pack());
     }
-
     @Override
     public String toString() {
-        return "Наименование упаковки:'" + name_pack + '\'' +
-                ", масса упаковки:" + mass_pack;
+        return "Наименование упаковки: '" + name_pack + '\'' + '\n' +
+                "Масса упаковки: " + mass_pack + " г";
     }
 }
