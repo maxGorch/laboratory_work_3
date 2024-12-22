@@ -1,4 +1,4 @@
-package org.example;
+package org.example.goods;
 
 import java.util.Objects;
 

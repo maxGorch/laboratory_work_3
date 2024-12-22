@@ -1,13 +1,27 @@
-package org.example;
+package org.example.goods;
+
 
 public class packedGoodsWeighted
         //TODO: Класс «Упакованный весовой товар» содержит
         // упаковку и некоторое количество весового товара (в кг).
 {
-    private final goodsWeighted default_goodsWeighted;
+    final goodsWeighted default_goodsWeighted;
     private final packagingOfGoods default_packagingOfGoods;
 
     public packedGoodsWeighted(goodsWeighted user_goodsWeighted, packagingOfGoods user_packagingOfGoods) {
+        if (user_goodsWeighted == null) {
+            throw new IllegalArgumentException("Весовой товар не может быть null.");
+        }
+        if (user_packagingOfGoods == null) {
+            throw new IllegalArgumentException("Упаковка не может быть null.");
+        }
+        if (user_goodsWeighted.getWeight() <= 0) {
+            throw new IllegalArgumentException("Вес товара должен быть положительным.");
+        }
+        if (user_packagingOfGoods.getMass_pack() < 0) {
+            throw new IllegalArgumentException("Масса упаковки не может быть отрицательной.");
+        }
+
         this.default_goodsWeighted = user_goodsWeighted;
         this.default_packagingOfGoods = user_packagingOfGoods;
     }
@@ -17,8 +31,10 @@ public class packedGoodsWeighted
     }
 
     public double getMassGross() {
-        return default_packagingOfGoods.getMass_pack() + default_goodsWeighted.getWeight();
+        return getMassNet() + default_packagingOfGoods.getMass_pack();
     }
+
+
 
     @Override
     public String toString() {

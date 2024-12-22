@@ -1,4 +1,6 @@
-import org.example.goods;
+package goods;
+
+import org.example.goods.goods;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

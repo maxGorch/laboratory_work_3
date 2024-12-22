@@ -1,10 +1,12 @@
+package goods;
 
-import org.example.packagingOfGoods;
+import org.example.goods.packagingOfGoods;
 import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class TestGoodsWeighted {
+public class TestGoodPiece {
     String test_str_empty = "";
     String test_str_null = null;
     int test_mass_pack = -10;
